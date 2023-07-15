@@ -1,15 +1,15 @@
 #include <stdio.h>
 
 /**
- * This is The entry Function
+ * main - Entry point
  *
  * Desription: A C program That print with function
  *
- * return: Always 0 (Success)
+ * Return: Always 0 (Success)
 */
 
 int main(void)
 {
-	puts("\"Programming is like building a multilingual puzzle\n");
+	puts("\"Programming is like building a multilingual puzzle");
 	return (0);
 }
