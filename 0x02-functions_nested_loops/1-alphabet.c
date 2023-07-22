@@ -1,24 +1,17 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * main - check the code
  *
- * Return: Always 0.
- */
+ * print_alphabet - utllizes the putchar funtion to print
+ * 		The alphabet a -z
+*/
 
-char print_alphabet()
+void print_alphabet(void)
 {
-	char i;
+	int ch;
+	
+	for (ch = 'a'; ch <= 'z'; ch++)
+		_putchar(ch);
+	_putchar('\n');
 
-	for (i = 'a'; i <= 'z'; i++)
-	{
-		putchar(i);
-	}
-	putchar('\n');
-}
-
-int main(void)
-{
-	print_alphabet();
-	return (0);
 }
