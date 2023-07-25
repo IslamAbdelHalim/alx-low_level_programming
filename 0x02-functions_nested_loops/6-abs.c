@@ -3,7 +3,7 @@
 /**
  * _abs - function to absolute the number
  *
- * @int: The paramter of function
+ * @c: The paramter of function
  *
  * Return: The absolute of number
 */
