@@ -6,11 +6,11 @@
  * @a: first intergers
  *
  * @b: second integers
- * 
- * Return : return the value
+ *
+ * Return: return the value
 */
 
-int add (int a, int b)
+int add(int a, int b)
 {
 	return (a + b);
 }
