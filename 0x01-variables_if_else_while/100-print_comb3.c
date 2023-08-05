@@ -15,7 +15,7 @@ int main(void)
 	{
 		for (j = 1; j <= 9; j++) /*This for the second number*/
 		{
-			if (i == j)
+			if (i == j || i > j)
 				continue;
 			putchar(i + '0');
 			putchar(j + '0');
