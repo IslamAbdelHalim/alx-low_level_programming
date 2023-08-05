@@ -15,6 +15,8 @@ int main(void)
 	{
 		for (j = 1; j <= 9; j++) /*This for the second number*/
 		{
+			if (i == j)
+				continue;
 			putchar(i + '0');
 			putchar(j + '0');
 			if (i + j != 17)
