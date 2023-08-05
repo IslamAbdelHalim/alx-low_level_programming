@@ -16,7 +16,11 @@ int main(void)
 		{
 			for (lDigit = 2; lDigit <= 9; lDigit++)
 			{
-				if (sDigit == lDigit || fDigit == sDigit || sDigit > lDigit || fDigit > sDigit)
+				if (sDigit == lDigit ||
+						fDigit == sDigit ||
+						sDigit > lDigit ||
+						fDigit > sDigit)
+
 				{
 					continue;
 				}
