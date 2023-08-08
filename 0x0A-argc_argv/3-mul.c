@@ -1,7 +1,6 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
  * main - Entry point to print the name of program
  *
@@ -14,26 +13,19 @@
 
 int main(int argc, char *argv[])
 {
-	int i;
 
-	if (argc <= 1)
+	if (argc <= 2)
 	{
 		printf("Error\n");
 	}
 	else
 	{
-		int result;
+		int num1, num2;
 
-		result = 1;
+		num1 = atoi(argv[1]);
+		num2 = atoi(argv[2]);
 
-		for (i = 1; i < argc; i++)
-		{
-			int x;
-
-			x = strtol(argv[i], NULL, 10);
-			result *= x;
-		}
-		printf("%d\n", result);
+		printf("%d\n", num1 * num2);
 	}
 	return (0);
 }
