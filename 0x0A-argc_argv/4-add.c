@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 			int num;
 
 			num = atoi(argv[i]);
-			if (num == 0)
+			if (*argv[i] <= 47 || *argv[i] >= 58)
 			{
 				printf("Error\n");
 				return (1);
