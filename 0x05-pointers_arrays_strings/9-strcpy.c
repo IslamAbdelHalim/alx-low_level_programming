@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * _strcpy - function that copies string from var1 to var2
@@ -13,6 +14,10 @@
 char *_strcpy(char *dest, char *src)
 {
 	int s, d;
+	char *ptr;
+
+	if (src == NULL)
+		printf("\n");
 
 	for (s = 0; src[s] != '\0'; s++)
 		;
@@ -21,5 +26,6 @@ char *_strcpy(char *dest, char *src)
 	{
 		dest[d] = src[d];
 	}
-	return (dest);
+	ptr = dest;
+	return (ptr);
 }
