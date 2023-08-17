@@ -24,14 +24,8 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	for (i = 0; i < n; i++)
 	{
 		s = va_arg(name, char *);
-		if (s == NULL)
-		{
-			printf("(nil)");
-		}
-		else
-		{
-			printf("%s%s", s, (i < n - 1) ? (separator ? separator : "") : "\n");
-		}
+		printf("%s%s", (s ? s : "(nil)"), (i < n - 1) ?
+				(separator ? separator : "") : "\n");
 	}
 	va_end(name);
 }
