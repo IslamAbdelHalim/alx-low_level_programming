@@ -33,9 +33,13 @@ char *str_concat(char *s1, char *s2)
 	int size1, size2, i;
 	char *m;
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL)
 	{
-		return (NULL);
+		s1 = " ";
+	}
+	else if (s2 == NULL)
+	{
+		s2 = " ";
 	}
 
 	size1 = _strlen(s1);
