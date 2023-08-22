@@ -9,7 +9,7 @@
 int main(void)
 {
 	int i;
-	long long int fsum, nsum, lsum, sum;
+	long int fsum, nsum, lsum, sum;
 
 	fsum = 0;
 	nsum = 1;
@@ -27,6 +27,6 @@ int main(void)
 		fsum = nsum;
 		nsum = lsum;
 	}
-	printf("%lld\n", sum);
+	printf("%ld\n", sum);
 	return (0);
 }
