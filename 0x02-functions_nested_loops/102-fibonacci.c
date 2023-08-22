@@ -19,7 +19,10 @@ int main(void)
 		lsum = fsum + nsum;
 		fsum = nsum;
 		nsum = lsum;
-		printf("%d, ", lsum);
+		if (i == 49)
+			printf("%d", lsum);
+		else
+			printf("%d, ", lsum);
 	}
 	printf("\n");
 	return (0);
