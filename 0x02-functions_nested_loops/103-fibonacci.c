@@ -16,7 +16,7 @@ int main(void)
 	lsum = 0;
 	sum = 0;
 
-	for (i = 1; i <= 4000000; i++)
+	for (i = 1; lsum < 4000000; i++)
 	{
 		lsum = fsum + nsum;
 
