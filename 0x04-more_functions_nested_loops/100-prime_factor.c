@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * largest_prime_factor: function
+ * largest_prime_factor - function
  *
  * @num: The number argument
  *
