@@ -13,11 +13,13 @@ int main(void)
 	long int num = 612852475143;
 
 	pf = 0;
-
 	i = 3;
 
 	while (num % 2 == 0)
+	{
 		num /= 2;
+		pf = 2;
+	}
 
 	while (num > 1)
 	{
