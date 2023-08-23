@@ -8,18 +8,18 @@
 
 void print_number(int n)
 {
+	unsigned int num = n;
 	/* check if n less than 0 */
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		num = -num;
 	}
-
 	/* reduce the number untile become on digit */
-	if ((n / 10) > 0)
+	if ((num / 10) > 0)
 	{
 		/*if(n / 10) > 10 make the same functio */
-		print_number(n / 10);
+		print_number(num / 10);
 	}
-	_putchar((n % 10) + '0');
+	_putchar((num % 10) + '0');
 }
