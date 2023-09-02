@@ -25,9 +25,10 @@ int main(int argc, char **argv)
 	else
 	{
 		int money = atoi(argv[1]);
+
 		if (money < 0)
 		{
-			printf("%d\n",0);
+			printf("%d\n", 0);
 		}
 		else
 		{
