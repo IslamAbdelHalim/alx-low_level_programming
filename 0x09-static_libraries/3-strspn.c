@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _memcpy - function to make any thing
+ * _strncpy - function to make any thing
  *
  * @dest: the first argument
  *

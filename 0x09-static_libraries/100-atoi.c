@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _stoi - function to make any thing
+ * _atoi - function to make any thing
  *
  * @s: The first argument
  *

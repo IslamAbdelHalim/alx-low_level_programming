@@ -1,13 +1,11 @@
 #include "main.h"
 
 /**
- * _memcpy - function to make any thing
+ * _strpbrk - function to make any thing
  *
- * @dest: the first argument
+ * @s: The first argument
  *
- * @src: The Second argument
- *
- * @n: The Third argument
+ * @accept: the second arg
  *
  * Return: Always 0
 */
