@@ -17,9 +17,9 @@ char *str_concat(char *s1, char *s2)
 	int size1 = 0, size2 = 0, i = 0;
 
 	if (s1 == NULL)
-		s1 = " ";
+		s1 = "";
 	else if (s2 == NULL)
-		s2 = " ";
+		s2 = "";
 
 	/*size of first string*/
 	while (s1[size1] != '\0')
