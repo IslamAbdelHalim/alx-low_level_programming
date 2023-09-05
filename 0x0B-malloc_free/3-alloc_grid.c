@@ -16,13 +16,15 @@ int **alloc_grid(int width, int height)
 {
 	int **arr, i, j;
 
-	if (width <= 0 || height <= 0)
-		return (NULL);
 	/*Allocat 2D array*/
-	arr = (int **)malloc(width * sizeof(int *));
-	for (i = 0; i < width; i++)
+	arr = (int **)malloc(height * sizeof(int *));
+	
+	if (width <= 0 || height <= 0 || arr == NULL)
+		return (NULL);
+
+	for (i = 0; i < height; i++)
 	{
-		arr[i] = (int *)malloc(height * sizeof(int));
+		arr[i] = (int *)malloc(width * sizeof(int));
 		if (arr[i] == 0)
 		{
 			while (i--)
