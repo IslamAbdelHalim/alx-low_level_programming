@@ -3,6 +3,23 @@
 #include <stdlib.h>
 
 /**
+ * _strlen - function to know the length
+ *
+ * @str: The string
+ *
+ * Return: The length of string
+*/
+int _strlen(char *str)
+{
+	int size = 0;
+
+	while (str[size] != '\0')
+		size++;
+
+	return (size);
+}
+
+/**
  * str_concat - function that concat 2 strings
  *
  * @s1: The string 1
@@ -14,23 +31,17 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *str;
-	int size1 = 0, size2 = 0, i = 0;
+	int size1, size2, i = 0;
 
 	if (s1 == NULL)
 		s1 = "\0";
 	else if (s2 == NULL)
 		s2 = "\0";
 
-	/*size of first string*/
-	while (s1[size1] != '\0')
-	{
-		size1++;
-	}
-	/*size of second string*/
-	while (s2[size2] != '\0')
-	{
-		size2++;
-	}
+	/*size of  string*/
+	size1 = _strlen(s1);
+	size2 = _strlen(s2);
+
 	/*Allocat memory*/
 	str = malloc(sizeof(*s1) * (size1 + size2 + 1));
 	/*Handle Malloc return*/
