@@ -12,6 +12,7 @@
 int _strlen(char *s)
 {
 	int size = 0;
+
 	while (s[size] != '\0')
 		size++;
 	return (size);
@@ -23,12 +24,16 @@ int _strlen(char *s)
  *
  * @ac: argument count
  *
- * */
+ * @av: The arguments
+ *
+ * Return: The new array of all arguments
+*/
 
 char *argstostr(int ac, char **av)
 {
 	char *arguments;
-	int i, j, tac = 0, cmp = 0;;
+	int i, j, tac = 0, cmp = 0;
+
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
