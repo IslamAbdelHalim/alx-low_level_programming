@@ -3,6 +3,24 @@
 #include <stdlib.h>
 
 /**
+ * _memset - function fills memory with constant
+ *
+ * @s: The arry
+ *
+ * @b: The constant
+ *
+ * @n: The size
+*/
+char *_memset(char *s, char b, unsigned int n)
+{
+	char *ptr = s;
+
+	while (n--)
+		*s++ = b;
+	return (ptr);
+}
+
+/**
  * _calloc - function that allocat memory
  *
  * @nmemb: The number of memory
@@ -14,8 +32,7 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int *arr;
-	unsigned int i;
+	void *arr;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
@@ -24,9 +41,5 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (arr == NULL)
 		return (NULL);
 
-	for (i = 0; i < (nmemb * size); i++)
-	{
-		arr[i] = 0;
-	}
 	return (arr);
 }
