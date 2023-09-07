@@ -8,6 +8,8 @@
  * @nmemb: The number of memory
  *
  * @size: The size
+ *
+ * Return: The address of memory
 */
 
 void *_calloc(unsigned int nmemb, unsigned int size)
