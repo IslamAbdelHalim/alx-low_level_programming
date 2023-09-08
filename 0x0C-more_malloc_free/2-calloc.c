@@ -3,36 +3,19 @@
 #include <stdlib.h>
 
 /**
- * _memset - function fills memory with constant
+ * _calloc - function to allocate memory
  *
- * @s: The arry
+ * @nmemb: The number of block
  *
- * @b: The constant
+ * @size: The size of memory
  *
- * @n: The size
-*/
-char *_memset(char *s, char b, unsigned int n)
-{
-	char *ptr = s;
-
-	while (n--)
-		*s++ = b;
-	return (ptr);
-}
-
-/**
- * _calloc - function that allocat memory
- *
- * @nmemb: The number of memory
- *
- * @size: The size
- *
- * Return: The address of memory
+ * Return: The pointer to this block
 */
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *arr;
+	char *arr;
+	unsigned int i;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
@@ -41,5 +24,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (arr == NULL)
 		return (NULL);
 
+	for (i = 0; i < (nmemb * size); i++)
+		arr[i] = 0;
+
 	return (arr);
+
 }
