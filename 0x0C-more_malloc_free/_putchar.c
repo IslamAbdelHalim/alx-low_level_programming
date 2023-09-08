@@ -3,12 +3,12 @@
 /**
  * _putchar - function to print char
  *
- * @c: The char
+ * @c: The character
  *
- * Return: The char
+ * Return: The character
 */
 
 int _putchar(char c)
 {
-	return (write(1, &c,1));
+	return (write(1, &c, 1));
 }
