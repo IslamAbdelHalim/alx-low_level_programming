@@ -10,14 +10,10 @@
 
 int length(char *s)
 {
-	int size = 0;
+	if (*s == '\0')
+		return (0);
 
-	while (*s != '\0')
-	{
-		size++;
-		s++;
-	}
-	return (size);
+	return (1 + length(s + 1));
 }
 
 /**
