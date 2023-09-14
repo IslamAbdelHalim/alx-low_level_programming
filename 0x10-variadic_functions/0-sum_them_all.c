@@ -3,7 +3,7 @@
 /**
  * sum_them_all - function to sum all argument
  *
- * @n: last named 
+ * @n: last named
  *
  * Return: The sum of number
 */
@@ -11,8 +11,9 @@
 int sum_them_all(const unsigned int n, ...)
 {
 	unsigned int i;
-        int sum = 0;
+	int sum = 0;
 	va_list num;
+
 	va_start(num, n);
 
 	if (n == 0)
