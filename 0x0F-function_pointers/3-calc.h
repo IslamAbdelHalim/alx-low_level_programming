@@ -1,11 +1,15 @@
 #ifndef CALC_H
 #define CALC_H
 
+#include <stdio.h>
+#include <stdlib.h>
+
 int op_add(int a, int b);
 int op_sub(int a, int b);
 int op_mul(int a, int b);
 int op_div(int a, int b);
 int op_mod(int a, int b);
+int (*get_op_func(char *s))(int, int);
 
 /**
  * struct op - Struct op
@@ -15,30 +19,8 @@ int op_mod(int a, int b);
  */
 typedef struct op
 {
-    char *op;
-    int (*f)(int a, int b);
+	char *op;
+	int (*f)(int a, int b);
 } op_t;
-
-/**
- * _atoi - function to convert string to integer
- *
- * @str: The string which turn to integer
- *
- * Return: The integar
-*/
-
-int _atoi(char *str)
-{
-	int i,,sign = 1, num = 0;
-	
-	while (*str++)
-	{
-		if (*str == '-')
-			sign *= -1;
-		else
-			num = (num * 10) + (*str - '0');
-	}
-	return (num * sign);
-}
 
 #endif
