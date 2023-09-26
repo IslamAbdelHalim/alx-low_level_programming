@@ -3,7 +3,7 @@
 /**
  * cap_string - function to capitalize the first character of all strings
  *
- * @str: the argument 
+ * @str: the argument
  *
  * Return: The final result of character
 */
@@ -14,13 +14,14 @@ char *cap_string(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] = ' ' || str[i] >= 33 && str[i] <= 46 || str[i] = 59 || 
-				str[i] = 63 || str[i] >= 91 && str[i] <= 93 || str[i] = 123 || str[i] = 125)
+		if ((i == 0 || str[i - 1] == ' ' || str[i - 1] == '\t' ||
+					str[i - 1] == '\n' || str[i - 1] == ',' ||
+					str[i - 1] == ';' || str[i - 1] == '.' || str[i - 1] == '!' ||
+					str[i - 1] == '?' || str[i - 1] == '"' || str[i - 1] == '(' ||
+					str[i - 1] == ')' || str[i - 1] == '{' || str[i - 1] == '}') &&
+				(str[i] >= 'a' && str[i] <= 'z'))
 		{
-			if (str[i + 1] >= 97 && str[i + 1] <= 122)
-			{
-				str[i + 1] = str[i + 1] - 32; 
-			}
+			str[i] = str[i] - 32;
 		}
 	}
 	return (str);
