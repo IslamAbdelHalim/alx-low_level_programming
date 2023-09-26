@@ -3,9 +3,9 @@
 /**
  * leet - function to transfare alpha to numbers
  *
- * @str: array of string
+ * @s: array of string
  *
- * Returen: The pointer to new char
+ * Return: The pointer to new char
 */
 
 char *leet(char *s)
@@ -14,6 +14,7 @@ char *leet(char *s)
 	int nums[] = {4, 3, 0, 7, 1};
 	unsigned int i;
 	char *str = s;
+
 	while (*s)
 	{
 		for (i = 0; i < sizeof(alph) / sizeof(char); i++)
@@ -24,7 +25,7 @@ char *leet(char *s)
 			}
 		}
 		s++;
-	}	
+	}
 
 	return (str);
 }
