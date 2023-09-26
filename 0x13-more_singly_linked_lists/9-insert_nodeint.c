@@ -15,7 +15,7 @@
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	/*Decleare a variables*/
-	listint_t *previousNode = *head;
+	listint_t *previousNode;
 	listint_t *newNode;
 	unsigned int i = 0;
 
@@ -28,6 +28,14 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (NULL);
 	newNode->n = n;
 
+	/*check if The linked list is empty*/
+	if (!idx)
+	{
+		*head = newNode;
+		newNode->next = *head;
+		return (newNode);
+	}
+	previousNode = *head;
 	/*Find The Index*/
 	while (i != idx)
 	{
