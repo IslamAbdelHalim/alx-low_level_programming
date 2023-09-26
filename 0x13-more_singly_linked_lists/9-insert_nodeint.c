@@ -3,6 +3,8 @@
 /**
  * insert_nodeint_at_index - function That add node at lindex
  *
+ * @head: The linked list
+ *
  * @idx: the index which will add the node of it
  *
  * @n: The data of node
