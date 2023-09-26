@@ -12,7 +12,7 @@ char *leet(char *s)
 {
 	int i, j;
 	char alph[] = "aAeEoOtTlL";
-	char nums[] = "4433007711";;
+	char nums[] = "4433007711";
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
