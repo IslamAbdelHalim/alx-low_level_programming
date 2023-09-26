@@ -10,22 +10,17 @@
 
 char *leet(char *s)
 {
+	int i, j;
 	char alph[] = "aAeEoOtTlL";
-	int nums[] = {4, 3, 0, 7, 1};
-	unsigned int i;
-	char *str = s;
+	char nums[] = "4433007711";;
 
-	while (*s)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (i = 0; i < sizeof(alph) / sizeof(char); i++)
+		for (j = 0; j < 10; j++)
 		{
-			if (*s == alph[i] || *s == alph[i] + 32)
-			{
-				*s = 48 + nums[i];
-			}
+			if (s[i] == alph[j])
+				s[i] = nums[j];
 		}
-		s++;
 	}
-
-	return (str);
+	return (s);
 }
