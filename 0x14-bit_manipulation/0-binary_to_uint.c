@@ -10,11 +10,11 @@
 
 int _strlen(const char *str)
 {
-        int i = 0;
+	int i = 0;
 
-        while (str[i] != '\0')
-                i++;
-        return (i);
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }
 
 /**
@@ -27,12 +27,12 @@ int _strlen(const char *str)
 
 int powBit(int n)
 {
-        int num = 1;
-        int i;
+	int num = 1;
+	int i;
 
-        for (i = 0; i < n; i++)
-                num = 2 * num;
-        return (num);
+	for (i = 0; i < n; i++)
+		num = 2 * num;
+	return (num);
 }
 
 /**
