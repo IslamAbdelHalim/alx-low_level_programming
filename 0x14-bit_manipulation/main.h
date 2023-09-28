@@ -9,6 +9,7 @@ int clear_bit(unsigned long int *n, unsigned int index);
 unsigned int flip_bits(unsigned long int n, unsigned long int m);
 
 /*important function*/
+int _putchar(char s);
 int _strlen(const char *str);
 int powBit(int n);
 
