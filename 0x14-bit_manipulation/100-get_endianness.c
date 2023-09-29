@@ -1,6 +1,10 @@
 #include "main.h"
 
-/***/
+/**
+ * get_endianness - function to know the type of endianness
+ *
+ * Return: 1 if it little-endian and 0 if big endian
+*/
 
 int get_endianness(void)
 {
