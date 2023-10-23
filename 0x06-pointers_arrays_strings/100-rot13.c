@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * rot13: fucntion
+ * rot13 - fucntion
  *
  * @s: argument
  *
