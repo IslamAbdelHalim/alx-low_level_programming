@@ -26,7 +26,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 	temp = *h;
 	new_node->n = n;
-	while (temp)
+	while (temp->next != NULL)
 	{
 		i++;
 		/*Finding The Index*/
@@ -48,7 +48,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	 * If the index is the last index of list
 	 * then add the new node at the end point
 	 */
-	if (i++ == idx)
+	if (temp->next == NULL)
 		return (add_dnodeint_end(h, n));
 	/*else if the index is more than list or no index then return null*/
 	return (NULL);
