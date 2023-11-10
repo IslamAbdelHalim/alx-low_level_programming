@@ -17,10 +17,8 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int i = 0;
 	dlistint_t *new_node, *temp;
 
-	if (!idx)
-		return (NULL);
 	/*Check if no linked list or index is zero add new node at the first*/
-	if (!h || idx == 0)
+	if (idx == 0)
 		return (add_dnodeint(h, n));
 	/*Make a new node*/
 	new_node = malloc(sizeof(dlistint_t));
@@ -51,9 +49,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	 * then add the new node at the end point
 	 */
 	if (++i == idx)
-	{
 		return (add_dnodeint_end(h, n));
-	}
 	/*else if the index is more than list or no index then return null*/
 	return (NULL);
 }
