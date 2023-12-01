@@ -14,7 +14,6 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	/* gives the index */
 	unsigned long int index;
 	hash_node_t *new_node;
 
@@ -22,21 +21,23 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	index = key_index((const unsigned char *)key, ht->size);
 	/* check if the key element is exist*/
-	if (strcmp(ht->array[index]->key, key) == 0)
+	while (ht->array[index] != NULL)
 	{
-		/*Update value*/
-		free(ht->array[index]->value);
-		ht->array[index]->value = strdup(value);
-		if (ht->array[index]->value == NULL)
-			return (0);
-		return (1);
+		if (strcmp(ht->array[index]->key, key) == 0)
+		{
+			/*Update value*/
+			free(ht->array[index]->value);
+			ht->array[index]->value = strdup(value);
+			if (ht->array[index]->value == NULL)
+				return (0);
+			return (1);
+		}
+		ht->array[index] = ht->array[index]->next;
 	}
 	/*if the key not exist create a new node*/
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
-	{
 		return (0);
-	}
 	new_node->key = strdup(key);
 	if (new_node->key == NULL)
 	{
