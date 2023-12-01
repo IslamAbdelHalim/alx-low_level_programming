@@ -1,69 +1,88 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-#define TABLE_SIZE 10
+//Define Items of Hash Tabel
+typedef struct Hash_item {
+  char *key;
+  char *value;
+  struct Hash_item *next;
+} Hash_item;
 
-typedef struct hash_node_s
-{
-     char *key;
-     char *value;
-     struct hash_node_s *next;
-} hash_node_t;
+//Define Hash table
+typedef struct Hash_table_t {
+  Hash_item **array;
+  unsigned long int size;
+} hash_table_t;
 
-typedef struct hash_table_s
-{
-     unsigned long int size;
-     hash_node_t **array;
-}hash_table_t;
-
-unsigned hash_function(char *name)
-{
-  unsigned int hash_value = 0;
-
-  for (int j = 0; name[j]; j++)
-  {
-    hash_value += name[j];
-    // hash_value = hash_value * name[j];
-  }
-
-  return hash_value % TABLE_SIZE;
-
-}
-
+//creaation a hash table
 hash_table_t *hash_table_create(unsigned long int size)
 {
-  hash_table_t *new_hash_table;
+  hash_table_t *table;
+  unsigned long int i = 0;
 
-  new_hash_table = malloc(sizeof(hash_table_t));
-  if (new_hash_table == NULL)
+  table = malloc(sizeof(hash_table_t));
+  if (table == NULL)
   {
     return NULL;
   }
+  table->size = size;
 
-  new_hash_table->size = size;
-
-  new_hash_table->array = malloc(sizeof(hash_node_t *) * size);
-
-  if(new_hash_table->array == NULL)
+  table->array = malloc(sizeof(Hash_item *) * size);
+  if (table->array == NULL)
   {
-    free(new_hash_table);
+    free(table);
     return NULL;
   }
-  
-  for(unsigned long int i = 0; i < size; i++)
+
+  for (; i < size; i++)
   {
-    new_hash_table->array[i] = NULL;
+    table->array[i] = NULL;
   }
 
-  return (new_hash_table);
+  return (table);
+}
+
+//Hash function
+unsigned long int hash_djb2(const unsigned char *str)
+{
+	unsigned long int hash;
+	int c;
+
+	hash = 5381;
+	while ((c = *str++))
+	{
+		hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
+	}
+	return (hash);
+}
+
+//a function that gives you the index of a key.
+unsigned long int key_index(const unsigned char *key, unsigned long int size)
+{
+  unsigned long int hash_value, index;
+
+  hash_value = hash_djb2(key);
+  index = hash_value % size;
+
+  return index;
 
 }
-int main()
+//main
+int main(void)
 {
-  hash_table_t *ht;
+char *s;
+    unsigned long int hash_table_array_size;
 
-    ht = hash_table_create(1024);
-    printf("%p\n", (void *)ht);
+    hash_table_array_size = 1024;
+    s = "cisfun";
+    printf("%lu\n", hash_djb2((unsigned char *)s));
+    printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));
+    s = "Don't forget to tweet today";
+    printf("%lu\n", hash_djb2((unsigned char *)s));
+    printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));
+    s = "98";
+    printf("%lu\n", hash_djb2((unsigned char *)s));
+    printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));  
     return (EXIT_SUCCESS);
-
 }
