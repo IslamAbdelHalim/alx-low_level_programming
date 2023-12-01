@@ -68,21 +68,24 @@ unsigned long int key_index(const unsigned char *key, unsigned long int size)
   return index;
 
 }
+//function add item
+int hash_table_set(hash_table_t *ht, const char *key, const char *value)
+{
+  unsigned long int index;
+
+  index = key_index(key, ht->size);
+
+  ht->array[index]->value == value;
+
+  return (1);
+}
+
 //main
 int main(void)
 {
-char *s;
-    unsigned long int hash_table_array_size;
+hash_table_t *ht;
 
-    hash_table_array_size = 1024;
-    s = "cisfun";
-    printf("%lu\n", hash_djb2((unsigned char *)s));
-    printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));
-    s = "Don't forget to tweet today";
-    printf("%lu\n", hash_djb2((unsigned char *)s));
-    printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));
-    s = "98";
-    printf("%lu\n", hash_djb2((unsigned char *)s));
-    printf("%lu\n", key_index((unsigned char *)s, hash_table_array_size));  
+    ht = hash_table_create(1024);
+    hash_table_set(ht, "betty", "cool");
     return (EXIT_SUCCESS);
 }
