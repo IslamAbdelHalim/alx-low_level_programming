@@ -2,7 +2,7 @@ CC = gcc
 
 all: school
 
-school:	main.c school.c
+school:	main.c school.c a.out main.h
 	$(CC) main.c school.c -o school
 	chmod +x shcool
 
