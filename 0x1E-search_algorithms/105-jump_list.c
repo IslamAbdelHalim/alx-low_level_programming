@@ -1,4 +1,5 @@
 #include "search_algos.h"
+#include <math.h>
 
 /**
  * jump_list - function that make a jump search in linked list
@@ -10,7 +11,7 @@
  * @value: the value you search for
  *
  * Return: the first node locate value
-*/
+ */
 
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
@@ -22,24 +23,21 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 
 	steps = sqrt(size);
 
-	while (head->next != NULL)
+	while (head != NULL && head->next != NULL)
 	{
-		list = head;
-		for (i = 0; i < steps; i++)
-		{
+		printf("Value checked at index [%ld] = [%d]\n", head->index, head->n);
+
+		for (i = 0; i < steps && head->next != NULL; i++)
 			head = head->next;
-			if (head->next == NULL)
-				break;
-		}
 
-		prinf("Value checked at index [%ld] = [%d]\n", head->index, head->n);
-
-		if (head->n == value)
+		if (head->n >= value)
 			break;
+
+		list = head;
 	}
 
 	printf("Value found between indexes [%ld] and [%ld]\n",
-			list->index, head->index);
+				 list->index, head->index);
 
 	while (list != NULL && list != head->next)
 	{
@@ -47,6 +45,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 
 		if (list->n == value)
 			return (list);
+
 		list = list->next;
 	}
 
